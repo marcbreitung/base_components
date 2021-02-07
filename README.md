@@ -1,4 +1,4 @@
-# Basic Components for Yew with and tailwindcss
+# Basic Yew Components with tailwindcss
 
 ## Form
 
