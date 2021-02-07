@@ -1,5 +1,5 @@
+use crate::components::color_scheme::{create_default_color_scheme, ColorScheme};
 use yew::prelude::*;
-use crate::components::color_scheme::{ColorScheme, create_default_color_scheme};
 
 pub enum Msg {
     UpdateValue(String),

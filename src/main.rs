@@ -1,11 +1,11 @@
-#![recursion_limit="256"]
+#![recursion_limit = "256"]
 
 mod components;
 
-use yew::prelude::*;
-use components::form::input;
-use components::form::button;
 use components::color_scheme::ColorScheme;
+use components::form::button;
+use components::form::input;
+use yew::prelude::*;
 
 enum Msg {
     UpdateValue(String),
