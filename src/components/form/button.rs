@@ -8,13 +8,14 @@ pub enum Msg {
 pub struct Props {
     #[prop_or_default]
     pub label: String,
-    pub onclick: Callback<()>,
+    #[prop_or_default]
+    pub onclick: Option<Callback<()>>,
 }
 
 pub struct Button {
     link: ComponentLink<Self>,
     label: String,
-    onclick: Callback<()>,
+    onclick: Option<Callback<()>>,
 }
 
 impl Component for Button {
@@ -32,7 +33,9 @@ impl Component for Button {
     fn update(&mut self, msg: Self::Message) -> ShouldRender {
         match msg {
             Msg::Click => {
-                self.onclick.emit(());
+                if let Some(onclick) = &self.onclick {
+                    onclick.emit(());
+                }
             }
         }
         false

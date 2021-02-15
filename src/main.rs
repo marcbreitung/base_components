@@ -46,7 +46,7 @@ impl Component for App {
 
     fn view(&self) -> Html {
         let onupdate = &self.link.callback(|value: String| Msg::UpdateValue(value));
-        let onclick = &self.link.callback(|_| Msg::Submit);
+        let onclick = Some(self.link.callback(|_| Msg::Submit));
         html! {
             <div class="container mx-auto">
                 <div class="grid grid-cols-6 gap-5">
@@ -61,6 +61,7 @@ impl Component for App {
                     </div>
                     <div class="col-start-1 col-end-3">
                         <button::Button label="Submit".to_owned() onclick=onclick/>
+                        <button::Button label="Submit".to_owned()/>
                     </div>
                     <div class="col-start-1 col-end-3">
                         <div>{&self.input_value}</div>
