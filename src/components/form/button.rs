@@ -50,18 +50,22 @@ impl Component for Button {
     fn view(&self) -> Html {
         let onclick = self.link.callback(|_| Msg::Click);
         let button_class = vec![
-            "inline-flex",
-            "itmes-center",
-            "justify-center",
-            "bg-gray-700",
-            "p-5",
-            "pt-2",
-            "pb-2",
+            "border",
+            "shadow-sm",
             "text-white",
+            "text-sm",
+            "rounded",
+            "p-2",
+            "px-4",
+            "bg-indigo-700",
         ];
 
         html! {
-             <button onclick=onclick class=button_class>{&self.label}</button>
+             <button onclick=onclick class=button_class>
+                    <span class="hidden md:block">
+                         {&self.label}
+                    </span>
+             </button>
         }
     }
 }
