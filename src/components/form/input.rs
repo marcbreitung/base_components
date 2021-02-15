@@ -32,7 +32,14 @@ pub struct Input {
 
 impl Input {
     pub fn element_class(&self) -> Vec<&str> {
-        let mut class = vec!["text-sm"];
+        let mut class = vec![
+            "p-2.5",
+            "grid",
+            "grid-cols-6",
+            "gap-5",
+            "place-content-center",
+            "text-sm",
+        ];
         let mut class_input = vec!["text-gray-700"];
         let mut class_error = vec!["text-red-700"];
         let mut class_readonly = vec!["text-gray-300"];
@@ -45,7 +52,7 @@ impl Input {
     }
 
     pub fn label_class(&self) -> Vec<&str> {
-        let mut class = vec!["block", "font-medium"];
+        let mut class = vec!["w-40", "block", "p-2"];
         let mut class_input = vec![];
         let mut class_error = vec![];
         let mut class_readonly = vec![];
@@ -58,7 +65,7 @@ impl Input {
     }
 
     pub fn input_class(&self) -> Vec<&str> {
-        let mut class = vec!["mt-1", "p-2", "block", "w-full", "border"];
+        let mut class = vec!["border", "text-gray-500", "rounded", "col-span-2", "p-2"];
         let mut class_input = vec!["border-gray-700"];
         let mut class_error = vec!["border-red-700"];
         let mut class_readonly = vec!["border-gray-300"];
@@ -71,7 +78,7 @@ impl Input {
     }
 
     pub fn message_class(&self) -> Vec<&str> {
-        let mut class = vec!["mt-1"];
+        let mut class = vec!["p-2"];
         let mut class_input = vec!["text-gray-700"];
         let mut class_error = vec!["text-red-700"];
         let mut class_readonly = vec!["text-gray-300"];
