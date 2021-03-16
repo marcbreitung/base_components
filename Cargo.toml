@@ -1,6 +1,6 @@
 [package]
 name = "yew_base_components"
-version = "0.1.0"
+version = "0.1.2"
 authors = ["Marc Breitung <info@marcbreitung.de>"]
 edition = "2018"
 
