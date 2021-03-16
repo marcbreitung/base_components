@@ -5,6 +5,7 @@ mod components;
 use components::color_scheme::ColorScheme;
 use components::form::button;
 use components::form::input;
+use components::message::message;
 use yew::prelude::*;
 
 enum Msg {
@@ -50,6 +51,7 @@ impl Component for App {
         html! {
             <div class="flex-1 gb-gray-50">
                 <div class="p-5 m-5 bg-white shadow-sm rounded">
+                        <message::Message text="Error".to_owned()/>
                         <input::Input label="Name".to_owned() value=&self.input_value.to_owned() onupdate=onupdate message="Please enter a value".to_owned() color_scheme=ColorScheme::Input show_message=true/>
                         <input::Input label="Name".to_owned() value=&self.input_value.to_owned() onupdate=onupdate message="Please enter a value".to_owned() color_scheme=ColorScheme::Error show_message=true/>
                         <input::Input label="Name".to_owned() value=&self.input_value.to_owned() onupdate=onupdate message="Please enter a value".to_owned() color_scheme=ColorScheme::Readonly show_message=true/>
