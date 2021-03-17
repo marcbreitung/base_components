@@ -51,7 +51,9 @@ impl Component for App {
         html! {
             <div class="flex-1 gb-gray-50">
                 <div class="p-5 m-5 bg-white shadow-sm rounded">
-                        <message::Message text="Error".to_owned()/>
+                        <message::Message text="Error".to_owned() color_scheme=ColorScheme::Input/>
+                        <message::Message text="Error".to_owned() color_scheme=ColorScheme::Error/>
+                        <message::Message text="Error".to_owned() color_scheme=ColorScheme::Readonly/>
                         <input::Input label="Name".to_owned() value=&self.input_value.to_owned() onupdate=onupdate message="Please enter a value".to_owned() color_scheme=ColorScheme::Input show_message=true/>
                         <input::Input label="Name".to_owned() value=&self.input_value.to_owned() onupdate=onupdate message="Please enter a value".to_owned() color_scheme=ColorScheme::Error show_message=true/>
                         <input::Input label="Name".to_owned() value=&self.input_value.to_owned() onupdate=onupdate message="Please enter a value".to_owned() color_scheme=ColorScheme::Readonly show_message=true/>
